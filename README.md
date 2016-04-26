@@ -1,4 +1,31 @@
 # Examen2016
+## Vragen
+1. **Wat betekent “Dynamisch” in de cursustitel Dynamische webtechnieken en wat houdt dit in binnen Wordpress?**
+
+2. **Wanneer maken we gebruik van Custom Post Types en waarom heet dit zo?**
+
+3. **Wat is het voordeel van een thema binnen Wordpress? Waartoe stelt ons dit in staat?**
+
+4. **Waarop moet je letten bij het toevoegen van custom javascript en css files? Geef een voorbeeld van een probleem dat zich kan voordoen.**
+
+5. **Waarom gebruiken we get_template_directory_uri() in het onderstaande voorbeeld? Wat doet de punt in: get_template_directory_uri() . '/css/syntra.css'**
+
+#### functions.php
+```php
+<?php
+function syntra_script_enqueue() {
+
+wp_enqueue_style('syntracss', get_template_directory_uri() . '/css/syntra.css', array(), '1.0.0', 'all');
+wp_enqueue_script('syntrajs', get_template_directory_uri() . '/js/syntra.js', array(), '1.0.0', true);
+
+}
+
+add_action( 'wp_enqueue_scripts', 'syntra_script_enqueue');
+?>
+```
+
+## Oefeningen
+
 ### Debug
 
 #### index.php
